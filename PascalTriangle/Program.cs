@@ -15,6 +15,7 @@ class Program
                 Console.Write(" ");
                 Console.Write(" ");
             }
+            Console.Write(new string(' ', rows - i));
 
             int number = 1;
 
