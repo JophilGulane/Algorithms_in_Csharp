@@ -74,7 +74,7 @@
 
                 List<Edge> mst = new List<Edge>();
 
-                foreach(var edge in Edges)
+                foreach(Edge edge in Edges)
                 {
                     int sourceParent = FindParent(parent, edge.Source);
                     int destinationParent = FindParent(parent, edge.Destination);

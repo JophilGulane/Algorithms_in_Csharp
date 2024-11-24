@@ -12,43 +12,46 @@
 
     public class Queue<T>
     {
-        private T[] _elements;
-        private int _front;
-        private int _rear;
-        private int _size;
-        private int _capacity;
+        private T[] elements;
+        private int front;
+        private int rear;
+        private int size;
+        private int capacity;
 
-        public Queue(int capacity)
+        public Queue(int _capacity)
         {
-            _capacity = capacity;
-            _elements = new T[_capacity];
-            _front = 0;
-            _rear = 0;
-            _size = 0;
+            capacity = _capacity;
+            elements = new T[capacity];
+            front = 0;
+            rear = 0;
+            size = 0;
         }
 
         public void Enqueue(T item)
         {
-            if (_size >= _capacity)
+            if (size >= capacity)
             {
                 Console.WriteLine("Queue Overflow!");
                 return;
             }
-            _elements[_rear] = item;
-            _rear = (_rear + 1) % _capacity;
-            _size++;
+            elements[rear] = item;
+            rear = (rear + 1) % capacity;
+            size++;
         }
 
         public T Dequeue()
         {
-            if (_size <= _capacity)
+            if (size <= capacity)
             {
                 Console.WriteLine("Queue Underflow!");
                 return default;
             }
             else
             {
-                T item = _elements[_front];
+                T item = elements[front];
+                front = (front + 1) % capacity;
+                size--;
+                return item;
             }
         }
     }
