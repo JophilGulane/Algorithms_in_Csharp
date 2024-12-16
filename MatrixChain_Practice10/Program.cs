@@ -30,7 +30,7 @@
                     int j = i + diff;
                     m[i, j] = int.MaxValue;
 
-                    for (int k = 1; k <= j - 1; k++)
+                    for (int k = i; k <= j - 1; k++)
                     {
                         int q = m[i, k] + m[k + 1, j] + P[i - 1] * P[k] * P[j];
                         if (q < m[i, j])
